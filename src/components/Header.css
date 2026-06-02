@@ -1,0 +1,142 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(9, 15, 28, 0.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(141, 165, 199, 0.16);
+}
+
+.header-container {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 18px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.brand-image {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  object-fit: cover;
+  border: 2px solid rgba(112, 199, 255, 0.6);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.brand-kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.profile-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+.profile-title {
+  font-size: 0.95rem;
+  color: var(--muted-light);
+}
+
+.nav-menu ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 8px;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 999px;
+  color: var(--muted-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.25s ease, color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--text-light);
+  background: rgba(95, 163, 255, 0.14);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.nav-link.active {
+  color: var(--text-light);
+  background: linear-gradient(
+    135deg,
+    rgba(70, 140, 255, 0.9),
+    rgba(39, 203, 255, 0.8)
+  );
+  box-shadow: 0 10px 24px rgba(24, 101, 242, 0.28);
+}
+
+@media (max-width: 860px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .nav-menu ul {
+    width: max-content;
+    min-width: 100%;
+    padding-bottom: 4px;
+  }
+}
+
+@media (max-width: 560px) {
+  .header-container {
+    width: min(100% - 24px, 1180px);
+    gap: 16px;
+  }
+
+  .profile-name {
+    font-size: 1.05rem;
+  }
+
+  .profile-title {
+    font-size: 0.88rem;
+  }
+
+  .brand-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+  }
+
+  .nav-link {
+    min-height: 38px;
+    padding: 0 14px;
+    font-size: 0.92rem;
+  }
+}
